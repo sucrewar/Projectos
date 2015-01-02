@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="urn:sap-com:document:sap:rfc:functions" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:sap-com:document:sap:rfc:functions" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation>
+    <sidl:sidl xmlns:sidl="http://www.sap.com/2007/03/sidl" />
+  </wsdl:documentation>
+  <wsdl:types>
+    <xsd:schema attributeFormDefault="qualified" targetNamespace="urn:sap-com:document:sap:rfc:functions">
+      <xsd:simpleType name="char10">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="10" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char15">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="15" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char3">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="3" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char30">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="30" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char44">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="44" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char6">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="6" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="string">
+        <xsd:restriction base="xsd:string" />
+      </xsd:simpleType>
+      <xsd:complexType name="ZENUMPEP">
+        <xsd:sequence>
+          <xsd:element name="NUM_PEP" type="tns:char15" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZCTNUMPEP">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:ZENUMPEP" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ZF_PEP_ENVIO_STATUS_CONT_QUAL">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="DESCRICAO_IN" type="tns:string" />
+            <xsd:element name="HOST" type="tns:char30" />
+            <xsd:element name="MRZ1" type="tns:char44" />
+            <xsd:element name="MRZ2" type="tns:char44" />
+            <xsd:element name="STATUS_IN" type="tns:char3" />
+            <xsd:element name="TIPO" type="tns:char6" />
+            <xsd:element name="USER" type="tns:char10" />
+            <xsd:element name="VERIFICACAOCHIP" type="tns:char3" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZF_PEP_ENVIO_STATUS_CONT_QUALResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="DESCRICAO_OUT" type="tns:string" />
+            <xsd:element name="DESTINO" type="tns:string" />
+            <xsd:element name="LISTA" type="tns:ZCTNUMPEP" />
+            <xsd:element name="LOTE" type="tns:char10" />
+            <xsd:element name="QUANTIDADE" type="tns:string" />
+            <xsd:element name="STATUS_OUT" type="tns:char3" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ZF_PEP_ENVIO_STATUS_CONT_QUAL">
+    <wsdl:part name="parameters" element="tns:ZF_PEP_ENVIO_STATUS_CONT_QUAL" />
+  </wsdl:message>
+  <wsdl:message name="ZF_PEP_ENVIO_STATUS_CONT_QUALResponse">
+    <wsdl:part name="parameter" element="tns:ZF_PEP_ENVIO_STATUS_CONT_QUALResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ZWS_PEP_ENVIO_STATUS_CONT_QUAL">
+    <wsdl:operation name="ZF_PEP_ENVIO_STATUS_CONT_QUAL">
+      <wsdl:input message="tns:ZF_PEP_ENVIO_STATUS_CONT_QUAL" />
+      <wsdl:output message="tns:ZF_PEP_ENVIO_STATUS_CONT_QUALResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ZWS_PEP_ENVIO_STATUS_CONT_QUAL" type="tns:ZWS_PEP_ENVIO_STATUS_CONT_QUAL">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ZF_PEP_ENVIO_STATUS_CONT_QUAL">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ZWS_PEP_ENVIO_STATUS_CONT_QUALService">
+    <wsdl:port name="ZWS_PEP_ENVIO_STATUS_CONT_QUAL" binding="tns:ZWS_PEP_ENVIO_STATUS_CONT_QUAL">
+      <soap:address location="http://incmdev1.incm.int:8080/sap/bc/srt/rfc/sap/zws_pep_envio_status_cont_qual/020/zws_pep_envio_status_cont_qual/zws_pep_envio_status_cont_qual" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

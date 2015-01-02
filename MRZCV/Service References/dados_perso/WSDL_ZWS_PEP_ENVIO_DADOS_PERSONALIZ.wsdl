@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="urn:sap-com:document:sap:rfc:functions" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:sap-com:document:sap:rfc:functions" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation>
+    <sidl:sidl xmlns:sidl="http://www.sap.com/2007/03/sidl" />
+  </wsdl:documentation>
+  <wsdl:types>
+    <xsd:schema attributeFormDefault="qualified" targetNamespace="urn:sap-com:document:sap:rfc:functions">
+      <xsd:simpleType name="char1">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="1" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char10">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="10" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char3">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="3" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char4">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="4" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char44">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="44" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char6">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="6" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="date10">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="10" />
+          <xsd:pattern value="\d\d\d\d-\d\d-\d\d" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="string">
+        <xsd:restriction base="xsd:string" />
+      </xsd:simpleType>
+      <xsd:complexType name="ZCTSTRING">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ZF_PEP_ENVIO_DADOS_PERSONALIZ">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="MRZ1_IN" type="tns:char44" />
+            <xsd:element name="MRZ2_IN" type="tns:char44" />
+            <xsd:element name="TIPO_IN" type="tns:char6" />
+            <xsd:element name="USER" type="tns:char10" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZF_PEP_ENVIO_DADOS_PERSONALIZResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="ALTURA" type="tns:char4" />
+            <xsd:element name="ANONASCIMENTO" type="tns:string" />
+            <xsd:element name="APELIDO" type="tns:string" />
+            <xsd:element name="ASSINATURA" type="tns:string" />
+            <xsd:element name="DATAEMISSAO" type="tns:date10" />
+            <xsd:element name="DATAVALIDADE" type="tns:date10" />
+            <xsd:element name="DESCRICAO" type="tns:string" />
+            <xsd:element name="DIANASCIMENTO" type="tns:string" />
+            <xsd:element name="EMISSORAUTORIDADE" type="tns:string" />
+            <xsd:element name="ESTADO" type="tns:char3" />
+            <xsd:element name="FOTOGRAFIA" type="tns:string" />
+            <xsd:element name="FOTOGRAFIACHIP" type="tns:string" />
+            <xsd:element name="LOCALNASCIMENTO" type="tns:string" />
+            <xsd:element name="MESNASCIMENTO" type="tns:string" />
+            <xsd:element name="MRZ1_OUT" type="tns:char44" />
+            <xsd:element name="MRZ2_OUT" type="tns:char44" />
+            <xsd:element name="NACIONALIDADE" type="tns:string" />
+            <xsd:element name="NACIONALIDADEABV" type="tns:string" />
+            <xsd:element name="NOMEPROPRIO" type="tns:string" />
+            <xsd:element name="NUMEROIDENTIFICACAO" type="tns:string" />
+            <xsd:element name="OBSERVACOES" type="tns:ZCTSTRING" />
+            <xsd:element name="SEXO" type="tns:char1" />
+            <xsd:element name="TIPODOCUMENTO" type="tns:string" />
+            <xsd:element name="TIPO_OUT" type="tns:char6" />
+            <xsd:element name="T_LINHA" type="xsd:unsignedByte" />
+            <xsd:element name="VERSAODOCUMENTO" type="tns:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ZF_PEP_ENVIO_DADOS_PERSONALIZ">
+    <wsdl:part name="parameters" element="tns:ZF_PEP_ENVIO_DADOS_PERSONALIZ" />
+  </wsdl:message>
+  <wsdl:message name="ZF_PEP_ENVIO_DADOS_PERSONALIZResponse">
+    <wsdl:part name="parameter" element="tns:ZF_PEP_ENVIO_DADOS_PERSONALIZResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ZWS_PEP_ENVIO_DADOS_PERSONALIZ">
+    <wsdl:operation name="ZF_PEP_ENVIO_DADOS_PERSONALIZ">
+      <wsdl:input message="tns:ZF_PEP_ENVIO_DADOS_PERSONALIZ" />
+      <wsdl:output message="tns:ZF_PEP_ENVIO_DADOS_PERSONALIZResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ZWS_PEP_ENVIO_DADOS_PERSONALIZ" type="tns:ZWS_PEP_ENVIO_DADOS_PERSONALIZ">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ZF_PEP_ENVIO_DADOS_PERSONALIZ">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ZWS_PEP_ENVIO_DADOS_PERSONALIZService">
+    <wsdl:port name="ZWS_PEP_ENVIO_DADOS_PERSONALIZ" binding="tns:ZWS_PEP_ENVIO_DADOS_PERSONALIZ">
+      <soap:address location="http://incmdev1.incm.int:8080/sap/bc/srt/rfc/sap/zws_pep_envio_dados_personaliz/020/zws_pep_envio_dados_personaliz/zws_pep_envio_dados_personaliz" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

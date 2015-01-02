@@ -1,0 +1,39 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="MRZCV.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="user" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Xidev</Value>
+    </Setting>
+    <Setting Name="pw" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">o6bqP5QB6v3iREO7bUFeLo9NFM07jpw1tGZy442i7vk=</Value>
+    </Setting>
+    <Setting Name="caminho_qualidade" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://incmdev1.incm.int:8080/sap/bc/srt/rfc/sap/zws_pep_envio_status_cont_qual/020/zws_pep_envio_status_cont_qual/zws_pep_envio_status_cont_qual</Value>
+    </Setting>
+    <Setting Name="caminho_fecho_caixa" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://incmdev1.incm.int:8080/sap/bc/srt/rfc/sap/zws_pep_fechar_caixa/020/zws_pep_fechar_caixa/zws_pep_fechar_caixa</Value>
+    </Setting>
+    <Setting Name="caminho_validauser" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://incmdev1.incm.int:8080/sap/bc/srt/rfc/sap/zws_pep_valida_utilizador/020/zws_pep_valida_utilizador/zws_pep_valida_utilizador</Value>
+    </Setting>
+    <Setting Name="caminho_dados_perso" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://incmdev1.incm.int:8080/sap/bc/srt/rfc/sap/zws_pep_envio_dados_personaliz/020/zws_pep_envio_dados_personaliz/zws_pep_envio_dados_personaliz</Value>
+    </Setting>
+    <Setting Name="caminho_fecho_sesao" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://incmdev1.incm.int:8080/sap/bc/srt/rfc/sap/zws_pep_fechar_sessao/020/zws_pep_fechar_sessao/zws_pep_fechar_sessao</Value>
+    </Setting>
+    <Setting Name="caminho_reimprimir" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://incmdev1.incm.int:8080/sap/bc/srt/rfc/sap/zws_pep_reimpressao/020/zws_pep_reimpressao/zws_pep_reimpressao</Value>
+    </Setting>
+    <Setting Name="caminho_retirar_pep" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://incmdev1.incm.int:8080/sap/bc/srt/rfc/sap/zws_pep_retirar_pep/020/zws_pep_retirar_pep/zws_pep_retirar_pep</Value>
+    </Setting>
+    <Setting Name="nome_impressora" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">\\server-print-pr\A4COR</Value>
+    </Setting>
+    <Setting Name="caminho_log" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\\Logs_Teste</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

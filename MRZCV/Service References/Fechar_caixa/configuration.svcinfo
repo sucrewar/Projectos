@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configurationSnapshot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:schemas-microsoft-com:xml-wcfconfigurationsnapshot">
+  <behaviors />
+  <bindings>
+    <binding digest="System.ServiceModel.Configuration.BasicHttpBindingElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089:&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data name=&quot;ZWS_PEP_FECHAR_CAIXA&quot; /&gt;" bindingType="basicHttpBinding" name="ZWS_PEP_FECHAR_CAIXA" />
+  </bindings>
+  <endpoints>
+    <endpoint normalizedDigest="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data address=&quot;http://incmdev1.incm.int:8080/sap/bc/srt/rfc/sap/zws_pep_fechar_caixa/020/zws_pep_fechar_caixa/zws_pep_fechar_caixa&quot; binding=&quot;basicHttpBinding&quot; bindingConfiguration=&quot;ZWS_PEP_FECHAR_CAIXA&quot; contract=&quot;Fechar_caixa.ZWS_PEP_FECHAR_CAIXA&quot; name=&quot;ZWS_PEP_FECHAR_CAIXA&quot; /&gt;" digest="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data address=&quot;http://incmdev1.incm.int:8080/sap/bc/srt/rfc/sap/zws_pep_fechar_caixa/020/zws_pep_fechar_caixa/zws_pep_fechar_caixa&quot; binding=&quot;basicHttpBinding&quot; bindingConfiguration=&quot;ZWS_PEP_FECHAR_CAIXA&quot; contract=&quot;Fechar_caixa.ZWS_PEP_FECHAR_CAIXA&quot; name=&quot;ZWS_PEP_FECHAR_CAIXA&quot; /&gt;" contractName="Fechar_caixa.ZWS_PEP_FECHAR_CAIXA" name="ZWS_PEP_FECHAR_CAIXA" />
+  </endpoints>
+</configurationSnapshot>
